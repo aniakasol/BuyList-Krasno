@@ -1,17 +1,303 @@
-.product-item {
-	background-color: gray;
-	display: inline-block;
-	height: 25px;
-	padding: 5px;
-	border-radius: 5px;
+body {
+      font-family: sans-serif;
+      background: #ddd;
+      padding: 20px 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+}
+.panel {
+    background: #ffffff;
+    padding: 20px;
+    flex-flow: column wrap;
+    flex: 1;
+    border-radius: 7px;
+    box-shadow: 3px 3px 5px #c1c1c1;
+}
+.panel.main{
+    flex: 2;
+}
+.item {
+    vertical-align:sub;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    border-top: 1px solid #eee;
+    padding: 12px 0px;
+}
+.item .item-name{
+    display: flex;
+    align-items: stretch;
+    min-width: 20px;
+    align-items: center;
+    justify-content: start;
+}
+.item.bought .minus , .item.bought .plus {
+    visibility: hidden;
+}
+.item.bought .delete {
+    display: none;
 }
 
-.amount {
-	background-color: yellow;
-	border-radius: 10px;
-	
-	display: inline-block;
-	height: 20px;
-	width: 20px;
-	text-align: center;
+.item button {
+    border: 1px #c7c7c7 solid;
+    border-radius: 5px;
+    margin: 3px;
+    padding: 4px 6px;
+    box-shadow: 0px -3px #c4c4c4 inset;
 }
+.item .delete {
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: #cd4b3c;
+    box-shadow: 0px -4px #aa2d2d inset;
+}
+.item .delete:active{
+    background-color: #be4032;
+    box-shadow: 0px -4px #aa2d2d inset;
+}
+
+.add-button{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+.add-button button {
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.amount{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.amount *{
+
+    text-align: center;
+    vertical-align: baseline;
+}
+.amount span {
+    background-color: #eaeaea;
+    padding: 6px 11px;
+    margin: 2px 3px;
+    border-radius: 5px;
+}
+.amount button {
+    font-weight: 700;
+    color: #ffffff;
+    border: none;
+    border-radius: 14px;
+    padding: 0px;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px -4px inset;
+}
+.amount .plus{
+    background-color: #93cd3c;
+    box-shadow: 0px -4px #78aa2d inset;
+}
+.amount .plus:active{
+    background-color: #85bf2e;
+    box-shadow: 0px -4px #628d22 inset;
+}
+.amount .minus{
+    background-color: #cd4b3c;
+    box-shadow: 0px -4px #aa2d2d inset;
+}
+.amount .minus:active{
+    background-color: #be4032;
+    box-shadow: 0px -4px #aa2d2d inset;
+}
+.item-name{
+    font-size: 16px;
+    flex: 1 1;
+    width: 140px;
+}
+.new-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 12px 0px;
+    font-size: 16px;
+}
+#newitem{
+    height: 36px;
+    font-size: inherit;
+    font-weight: 400;
+    color:#818181;
+    border: 1px solid #c8c8c8;
+    border-right: none;
+    border-radius: 3px 0px 0px 3px;
+    padding: 0px 0px 0px 20px;
+}
+#newitem-button{
+    font-size: inherit;
+    font-weight: bold;
+    background-color: rgb(49, 146, 211);
+    color: white;
+    height: 38px;
+    text-align: center;
+    border: none;
+    box-shadow: -5px -5px rgb(66, 123, 161) inset;
+    border-radius: 0px 3px 3px 0px;
+
+}
+#newitem-button:hover{
+    background-color: rgb(83, 151, 197);
+}
+#newitem-button:active{
+    background-color: rgb(237, 162, 43);
+     box-shadow: -5px -5px rgb(201, 132, 20) inset;
+}
+button[data-tooltip] {
+  position: relative;
+}
+button[data-tooltip]::after{
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8, 0.75);
+  transform-origin: bottom;
+  background: #a719d7c7;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
+  font-size: 12;
+  font-weight: 500;
+  text-align: center;
+}
+button[data-tooltip]:hover::after{
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+#remain, #bought {
+    padding: 10px 0px 0px 10px;
+    font-weight: 700;
+}
+#bought {
+    border-top: 1px solid #eee;
+} 
+.itemlist {
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-flow: row wrap;
+}
+.list-item {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(226, 226, 226);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 7px 10px;
+}
+
+.list-item .list-am {
+    color: #ffffff;
+    font-weight: 500;
+    vertical-align: baseline;
+    background-color: rgb(237, 162, 43);
+    border-radius: 11px; 
+    padding: 4px 8px;
+    margin: 3px;
+}
+
+#badge{
+    width: 100px;
+    padding: 10px 10px 0px 10px;
+    background-color: rgba(213, 57, 231, 0.875);
+    border-radius: 12px 12px 0px 0px;
+    font-family:'monaco';
+    font-weight: 900;
+    text-align: center;
+    font-size: 18px;
+    position: fixed;
+    bottom: 0;
+    left: 40px;
+    transition: background-color 0.4s ease;
+}
+#badge .creator {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, max-height 0.4s ease;
+    padding: 14px 0px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+}
+#badge:hover {
+    background-color: rgba(52, 87, 238, 0.875);
+}
+#badge:hover .creator{
+    opacity: 1;
+    max-height: 200px;
+    display: block;
+}
+
+@media (max-width: 620px){
+    body{
+        flex-direction: column;
+    }
+    .item{
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+}
+
+form label {
+    display: none;
+}
+
+@media print {
+    body {
+        background: none;
+    }
+    .add-button,
+    .new-item,
+    button,
+    #newitem,
+    #newitem-button {
+        display: none !important;
+    }
+
+    #badge {
+        background-color: transparent;
+        border: 3px solid purple;
+        border-bottom: none;
+        text-align: left;
+        color: #000;
+    }
+
+    #badge #title {
+        display:none
+    }
+    #badge .creator{
+        opacity: 1;
+        max-height: 200px;
+    }
+    .itemlist {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .list-item {
+        justify-content: flex-start;
+    }
+
+    .panel {
+        box-shadow: none;
+        border: 3px solid purple;
+    }
+}
+
