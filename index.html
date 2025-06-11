@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="список покупок">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shopping list</title>
     <link rel="stylesheet" href="main.css">
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -21,41 +23,43 @@
                 </button>
             </form>
         </div>
-        <div class="item bought">
-            <span class="item-name"><s>Помідори</s></span>
-            <span class="amount">
-                <button class="minus" data-tooltip="зменшити к-кість">-</button>
-                <span>2</span>
-                <button class="plus" data-tooltip="збільшити к-кість">+</button>
-            </span>
-            <span class="add-button">
-                <button data-tooltip="позначити як:">Не куплено</button>
-                <button class="delete" data-tooltip="видалити">x</button>
-            </span>
-        </div>
-        <div class="item">
-            <span class="item-name">Печиво</span>
-            <span class="amount">
-                <button class="minus" data-tooltip="зменшити к-кість">-</button>
-                <span>2</span>
-                <button class="plus" data-tooltip="збільшити к-кість">+</button>
-            </span>
-            <span class="add-button">
-                <button data-tooltip="позначити як:">Куплено</button>
-                <button class="delete" data-tooltip="видалити">x</button>
-            </span>
-        </div>
-        <div class="item">
-            <input class="item-name" type="text" name="rename-item" value="Сир"></input>
-            <span class="amount">
-                <button class="minus" data-tooltip="зменшити к-кість">-</button>
-                <span>1</span>
-                <button class="plus" data-tooltip="збільшити к-кість">+</button>
-            </span>
-            <span class="add-button">
-                <button data-tooltip="позначити як:">Куплено</button>
-                <button class="delete" data-tooltip="видалити">x</button>
-            </span>
+        <div class="allitems">
+            <div class="item bought">
+                <span class="item-name"><s>Помідори</s></span>
+                <span class="amount">
+                    <button class="minus" data-tooltip="зменшити к-кість">-</button>
+                    <span>2</span>
+                    <button class="plus" data-tooltip="збільшити к-кість">+</button>
+                </span>
+                <span class="add-button">
+                    <button data-tooltip="позначити як:">Не куплено</button>
+                    <button class="delete" data-tooltip="видалити">x</button>
+                </span>
+            </div>
+            <div class="item">
+                <span class="item-name">Печиво</span>
+                <span class="amount">
+                    <button class="minus" data-tooltip="зменшити к-кість">-</button>
+                    <span>2</span>
+                    <button class="plus" data-tooltip="збільшити к-кість">+</button>
+                </span>
+                <span class="add-button">
+                    <button data-tooltip="позначити як:">Куплено</button>
+                    <button class="delete" data-tooltip="видалити">x</button>
+                </span>
+            </div>
+            <div class="item">
+                <span class="item-name"><input type="text" name="rename-item" value="Сир" ></input></span>
+                <span class="amount">
+                    <button disabled class="minus" data-tooltip="зменшити к-кість">-</button>
+                    <span>1</span>
+                    <button class="plus" data-tooltip="збільшити к-кість">+</button>
+                </span>
+                <span class="add-button">
+                    <button data-tooltip="позначити як:">Куплено</button>
+                    <button class="delete" data-tooltip="видалити">x</button>
+                </span>
+            </div>
         </div>
     </div>
 
