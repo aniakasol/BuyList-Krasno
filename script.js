@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
         input.value = "";
         renderProducts();
     });
-
     loadProductsFromStorage();
     renderProducts();
     updateInfo();
